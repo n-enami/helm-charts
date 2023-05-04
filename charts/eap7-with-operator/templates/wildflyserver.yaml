@@ -1,0 +1,9 @@
+apiVersion: wildfly.org/v1alpha1
+kind: WildFlyServer
+metadata:
+  name: {{ .Release.Name}}
+spec:
+  # the application image is built by the Helm chart and is named
+  # as the Helm release
+  applicationImage: {{ .Release.Name}}:latest
+  replicas: 1
