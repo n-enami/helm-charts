@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="img/eap-logo.png">
+
+  <title>Helm examples for JBoss EAP</title>
+ 
+  <!-- Bootstrap core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+
+<body>
+
+  <!-- navbar -->
+  <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+      <a class="navbar-brand my-0 mr-md-auto font-weight-normal" href="/index.html">
+        <img src="img/eap-logo.png" height="36">&nbsp;|&nbsp;<img
+            src="img/Asset-Red_Hat-Logo_page-Logo-RGB.svg" height="36">
+    </a>
+  </div>
+  <!-- end navbar -->
+  
+  <div class="container">
+  <h1>Helm Examples for JBoss EAP</h1>
+
+  This Helm repository provides examples for JBoss EAP on OpenShift.
+
+  <h2>Integration with OpenShift Web Console</h2>
+
+  <p>This repository can be added to the OpenShift Web Console as a <code>ProjectHelmChartRepository</code> resource to install its charts
+  from the OpenShift Web Console.</p>
+
+  <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource: 
+  <hr>
+  <code>
+    <pre id="phcr">
+apiVersion: helm.openshift.io/v1beta1
+kind: ProjectHelmChartRepository
+metadata:
+  name: jboss-eap-up-and-running
+spec:
+  connectionConfig:
+    url: https://jboss-eap-up-and-running.github.io/helm-charts/
+  name: Helm Examples for JBoss EAP
+  description: >-
+    This Helm Chart Repository contains examples for JBoss EAP
+    applications on OpenShift</pre>
+  </code>
+  <div>
+
+  <div id="copyPHCR" class="small"><i id="copyPHCR-button" class="bi bi-clipboard"></i>&nbsp;<span id="copyPHCR-text">Copy to clipboard</span></div>
+  <hr>
+  
+  <p>You can add it to OpenShift Web Console by pasting it as a new YAML resource.</p>
+
+  <p>Alternatively, you cann add it to the OpenShift Web Console with the <code>oc</code> tool by running the command:</p>
+
+  <code>
+    <pre>
+oc apply -f https://jboss-eap-up-and-running.github.io/helm-charts/phcr.yaml
+    </pre>
+  </code>
+
+  <h3>Install the examples from the OpenShift Web Console</h3>
+
+  Once the <code>ProjectHelmChartRepository</code> resource is added to the OpenShift Web Console, you can install the examples:
+
+  <ul>
+    <li>In the main navigation, click the dropdown menu and select <code>Developer</code>.</li>
+    <li>In the navigation menu, click <code>+Add</code>. </li>
+    <li>In the <code>Add</code> page, click <code>Helm Chart</code>.</li>
+    <li>In the <code>Helm Charts</code> catalog, select <code>Examples for JBoss EAP</code> in the <code>Chart Repositories</code>
+      section to list all EAP examples.</li>
+    <li>Select any of the examples and click <code>Create</code> to install the example.</li>
+  </ul>
+
+  <h2>Usage with <code>helm</code> tool</h2>
+
+
+    <p>The <code>helm</code> command-line tool must be installed to use the charts.  Please refer to
+      Helm's <a href="https://helm.sh/docs">documentation</a> to get started.
+
+    <p>Once <code>helm</code> has been set up correctly, add this repository as follows:
+
+    <code>
+      <pre>
+helm repo add jboss-eap-examples https://jboss-eap-up-and-running.github.io/helm-charts</pre>
+    </code>
+
+    <p>If you had already added this repo earlier, run <code>helm repo update</code> to retrieve
+      the latest versions of the charts. You can then run <code>helm search repo jboss-eap-examples</code>
+      to list the charts.
+    
+    <p>To install the <code>&lt;chart-name&gt;</code> chart, run the command:
+
+    <code>
+      <pre>
+helm install &lt;chart-name&gt; jboss-eap-examples/&lt;chart-name&gt;
+      </pre>
+    </code>
+    
+    <p>To uninstall the chart, run the command:
+    
+      <code>
+        <pre>
+helm delete &lt;chart-name&gt;  
+        </pre>
+      </code>
+
+  <h2>Source Code</h2>
+
+  <div>
+    The source code of these Helm charts is located at <a href="https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts">https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts</a>.
+  </div>
+
+  <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy; 2023 Red Hat</small>
+      </div>
+  </footer>
+
+  </div>
+
+</body>
+<script>
+  document.getElementById('copyPHCR').addEventListener('click', function() {
+  var phcr = document.getElementById('phcr');
+  var tempPHCR = document.createElement('textarea');
+  tempPHCR.value = phcr.textContent;
+  
+  // Append the textarea to the document
+  document.body.appendChild(tempPHCR);
+  
+  // Select the text inside the textarea
+  tempPHCR.select();
+  tempPHCR.setSelectionRange(0, 99999); /* For mobile devices */
+  
+  // Execute the copy command
+  document.execCommand('copy');
+  
+  // Remove the temporary textarea
+  document.body.removeChild(tempPHCR);
+  document.getElementById('copyPHCR-button').classList.remove("bi-clipboard");
+  document.getElementById('copyPHCR-button').classList.add("bi-clipboard-check");
+  document.getElementById('copyPHCR-text').textContent = "Copied!";
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</html>
+
