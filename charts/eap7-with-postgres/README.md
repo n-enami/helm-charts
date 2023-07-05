@@ -42,7 +42,7 @@ eap74:
         value: '42.2.19'
 ```
 
-The Jakarta EE application stored in the Git repository https://github.com/jboss-eap-up-and-running/eap7-with-postgres will be compiled and deployed in a EAP 7.4 server that is provisioned with the `cloud-server` and `postgresql-datasource` layers.
+The Jakarta EE application stored in the Git repository [https://github.com/jboss-eap-up-and-running/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/eap7-with-postgres) will be compiled and deployed in a EAP 7.4 server that is provisioned with the `cloud-server` and `postgresql-datasource` layers.
 
 The `postgresql-datasource` layer contains all the artifacts and configuration need to use a Java DataSource that references a PostgreSQL database.
 The `POSTGRESQL_DRIVER_VERSION` environment variable must be specified at `build` time to specifiy the version of the JDBC driver.
@@ -83,7 +83,7 @@ The `POSTGRESQL_SERVICE_HOST` value is the name of the service that exposes the 
 
 ## Deploying the example with `helm`
 
-Install the Helm chart defined in https://github.com/jboss-eap-up-and-running/helm-charts/eap7-with-postgres to install the application into OpenShift.
+Install the Helm chart defined in [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres) to install the application into OpenShift.
 
 ```
 git clone https://github.com/jboss-eap-up-and-running/helm-charts.git
@@ -124,5 +124,5 @@ helm uninstall eap7-with-postgres
 
 The source code of the Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/eap7-with-postgres).
 
-The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgres)
+The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres)
 
