@@ -83,12 +83,12 @@ The `POSTGRESQL_SERVICE_HOST` value is the name of the service that exposes the 
 
 ## Deploying the example with `helm`
 
-Install the Helm chart defined in [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres) to install the application into OpenShift.
+Install the Helm chart defined in [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgresql](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgresql) to install the application into OpenShift.
 
 ```
 git clone https://github.com/jboss-eap-up-and-running/helm-charts.git
-cd charts/eap7-with-postgres
-helm install --dependency-update eap7-with-postgres .
+cd charts/eap7-with-postgresql
+helm install --dependency-update eap7-with-postgresql .
 ```
 
 ## Running the application
@@ -96,14 +96,14 @@ helm install --dependency-update eap7-with-postgres .
 Once the application is up and running, you can create a few entries in the database by running the following POST commands:
 
 ```
-curl -k -X POST https://$(oc get route eap7-with-postgres --template='{{ .spec.host }}')/app?value=Hello+World
-curl -k -X POST https://$(oc get route eap7-with-postgres --template='{{ .spec.host }}')/app?value=Bonjour+le+Monde
+curl -k -X POST https://$(oc get route eap7-with-postgresql --template='{{ .spec.host }}')/app?value=Hello+World
+curl -k -X POST https://$(oc get route eap7-with-postgresql --template='{{ .spec.host }}')/app?value=Bonjour+le+Monde
 ```
 
 Then we can read the entries we added by running the command:
 
 ```
-curl -k https://$(oc get route eap7-with-postgres --template='{{ .spec.host }}')/app
+curl -k https://$(oc get route eap7-with-postgresql --template='{{ .spec.host }}')/app
 ```
 
 This command will display the result: 
@@ -117,12 +117,12 @@ This command will display the result:
 To delete the application with Helm, run the command:
 
 ```
-helm uninstall eap7-with-postgres
+helm uninstall eap7-with-postgresql
 ```
 
 ## Source
 
 The source code of the Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/eap7-with-postgres).
 
-The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgres)
+The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgresql](https://github.com/jboss-eap-up-and-running/helm-charts/tree/main/charts/eap7-with-postgresql)
 
