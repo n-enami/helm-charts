@@ -20,12 +20,12 @@ This is not required to deploy your fork of the charts, instead you can directly
 For example, the [eap7-with-postgres](./charts/eap7-with-postgres) example can be deployed with the instructions:
 
 ```
-cd charts/eap7-with-postgres
-helm install --dependency-update eap7-with-postgres .
+cd charts/eap7-with-postgresql
+helm install --dependency-update eap7-with-postgresql .
 ```
 
 To uninstall this chart, run the command:
 
 ```
-helm uninstall eap7-with-postgres
+helm uninstall eap7-with-postgresql
 ```
