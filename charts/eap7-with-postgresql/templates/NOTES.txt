@@ -8,7 +8,7 @@ Once the image is built, the application can be accessed from the route for the 
 
 The source code of the Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/eap7-with-postgres).
 
-The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgres](https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgres).
+The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgresql](https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap7-with-postgresql).
 
 # Documentation
 
