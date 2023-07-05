@@ -1,0 +1,11 @@
+apiVersion: helm.openshift.io/v1beta1
+kind: ProjectHelmChartRepository
+metadata:
+  name: jboss-eap-up-and-running
+spec:
+  connectionConfig:
+    url: https://jboss-eap-up-and-running.github.io/helm-charts/
+  name: Helm Examples for JBoss EAP
+  description: >-
+    This Helm Chart Repository contains examples for JBoss EAP
+    applications on OpenShift
