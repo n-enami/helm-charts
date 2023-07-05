@@ -1,0 +1,6 @@
+eap74:
+  build:
+    uri: https://github.com/jboss-eap-up-and-running/eap7-getting-started
+  deploy:
+    # disable deployment by the Helm Chart as it will done with the EAP Operator
+    enabled: false
