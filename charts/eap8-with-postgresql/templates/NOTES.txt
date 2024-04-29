@@ -1,0 +1,16 @@
+Your JBoss EAP 8.0 application is installed on OpenShift!
+
+The application image is now building from the Jakarta EE application source code.
+
+Once the image is built, the application can be accessed from the route for the {{ .Release.Name}} deployment.
+
+## Source
+
+The source code of the Jakarta EE application is at [https://github.com/jboss-eap-up-and-running/eap8-with-postgres](https://github.com/jboss-eap-up-and-running/eap8-with-postgres).
+
+The source code of the Helm Chart is at [https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap8-with-postgresql](https://github.com/jboss-eap-up-and-running/helm-charts/charts/eap8-with-postgresql).
+
+# Documentation
+
+* [Using JBoss EAP on OpenShift Container Platform](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/8.0/html/using_jboss_eap_on_openshift_container_platform/index)
+* [Product Documentation for Red Hat JBoss EAP 8.0](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/8.0)
